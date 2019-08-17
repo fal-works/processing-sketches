@@ -2,7 +2,6 @@ import java.util.List;
 import java.util.Arrays;
 
 class Particle {
-  final Ratio easingFactor = new Ratio(0.25);
   LineSegment lineSegment;
   ImmutableVector targetPoint;
 
@@ -14,8 +13,8 @@ class Particle {
   void update() {
     ImmutableVector displacement = targetPoint
       .sub(lineSegment.endPoint)
-      .mult(this.easingFactor);
-      
+      .mult(EASING_FACTOR);
+
     lineSegment = new LineSegment(
       lineSegment.endPoint,
       lineSegment.endPoint.add(displacement)

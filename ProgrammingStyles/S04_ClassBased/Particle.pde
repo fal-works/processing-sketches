@@ -15,10 +15,11 @@ class LineSegment {
   }
 }
 
+float EASING_FACTOR = 0.25;
+
 class Particle {
   LineSegment lineSegment;
   PVector targetPoint;
-  float easingFactor = 0.25;
 
   Particle() {
     lineSegment = new LineSegment();
@@ -31,7 +32,7 @@ class Particle {
     PVector displacement = targetPoint
       .copy()
       .sub(lineSegment.endPoint)
-      .mult(this.easingFactor);
+      .mult(EASING_FACTOR);
 
     lineSegment.endPoint.add(displacement);
   }
