@@ -76,7 +76,7 @@ void draw() {
     final float alpha = fnAlpha(time);
     final float beta = fnBeta(time);
 
-    for (float i = 0; i < NUM_PARTICLES; i++) {
+    for (int i = 0; i < NUM_PARTICLES; i++) {
       final float normalizedIndex = (float)i / NUM_PARTICLES;
       
       final float hue = normalizedIndex * COLOR_MAX_VALUE;
